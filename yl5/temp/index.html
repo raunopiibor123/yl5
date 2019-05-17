@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Chart</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="graphing.js"></script>
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-inverse" style="background-color: #8BC6FF">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand text-black">Graafikud</a>
+      </div>
+      <div class="navbar-form navbar-left">
+          <label for="start" class="text-black">Algus:</label>
+          <input type="date" id="start" name="start"
+                 value="2019-04-15">
+          <label for="start" class="text-black">Lõpp:</label>
+          <input type="date" id="stop" name="stop"
+                 value="2019-05-13">
+          <button class="btn btn-primary" onclick="fetchData('default')">Otsi</button>
+          <button class="btn btn-primary" onclick="showChart(0)">Joon</button>
+          <button class="btn btn-primary" onclick="showChart(1)">Tulp</button>
+          <form method="get" action="http://greeny.cs.tlu.ee/~piibraun/AsjadeInternet/5yl/main.html">
+          <button type="submit" class="btn btn-danger" >Tagasi</button>
+          </form>
+    </div>
+    </div>
+  </nav>
+  <div class="container">
+    <canvas id="myChart"></canvas>
+  </div>
+  <canvas id="myChart2"></canvas>
+
+</body>
+
+</html>
+<script>
+    fetchData('default')
+  //fetchData("default", "2019-04-15 08:23:22", "2019-05-13 07:47:29");
+</script>

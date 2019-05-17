@@ -1,0 +1,28 @@
+<?php
+if (isset($_POST['Submit']) ) {
+$data = $_POST['value'];
+$fh = fopen("lamp.txt", 'w'); 
+$ret = fwrite($fh, $data);
+fclose($fh);
+if($ret === false) {
+die('There was an error writing this file');
+}
+else {
+echo "$ret bytes written to file";
+}
+}
+?>
+<html>
+<body>
+<form method="POST">
+<input type="radio" name="value" value="in" checked> Sees<br>
+<input type="radio" name="value" value="out"> Väljas<br>
+<input type="submit" name="Submit">
+
+       <form method="get" action="http://greeny.cs.tlu.ee/~piibraun/AsjadeInternet/5yl/main.html">
+    <button type="submit" class="btn btn-danger" >Tagasi</button>
+</form>
+</form>
+</form> 
+</body>
+</html>
